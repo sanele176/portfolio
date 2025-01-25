@@ -1,27 +1,33 @@
+///
 /// Dimension by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
 
-/// Icon
+/* Icon */
 
-.icon {
-    @include icon;
-    border-bottom: none;
-    position: relative;
+	.icon {
+		@include icon;
+		border-bottom: none;
+		position: relative;
 
-    &:before {
-        line-height: inherit;
-    }
+		> .label {
+			display: none;
+		}
 
-    &.solid {
-        &:before {
-            font-weight: 900;
-        }
-    }
+		&:before {
+			line-height: inherit;
+		}
 
-    &.brands {
-        &:before {
-            font-family: 'Font Awesome 5 Brands';
-        }
-    }
-}
+		&.solid {
+			&:before {
+				font-weight: 900;
+			}
+		}
+
+		&.brands {
+			&:before {
+				font-family: 'Font Awesome 5 Brands';
+			}
+		}
+	}
