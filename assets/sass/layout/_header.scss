@@ -15,8 +15,7 @@
 			'filter #{_duration(article)} ease-in-out',
 			'opacity #{_duration(article)} ease-in-out',
 		));
-background-image: linear-gradient(to bottom right, #{_palette(bg)}, #{_palette(bg-alt)});
-
+		background-image: -moz-radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
 		background-image: -webkit-radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
 		background-image: -ms-radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
 		background-image: radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
@@ -57,6 +56,7 @@ background-image: linear-gradient(to bottom right, #{_palette(bg)}, #{_palette(b
 
 			.icon {
 				&:before {
+					font-size: 2rem;
 				}
 			}
 		}
