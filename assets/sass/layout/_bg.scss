@@ -46,7 +46,8 @@
 				'transform #{_duration(article)} ease-in-out',
 				'filter #{_duration(article)} ease-in-out'
 			));
-			background-image:		url('../../images/bg.jpg');
+background-image: linear-gradient(to bottom right, #{_palette(bg)}, #{_palette(bg-alt)});
+
 			background-position:	center;
 			background-size:		cover;
 			background-repeat:		no-repeat;

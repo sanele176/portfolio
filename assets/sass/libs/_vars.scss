@@ -1,43 +1,42 @@
-// Misc.
-	$misc: (
-		z-index-base:				10000
-	);
+$misc: (
+    z-index-base: 10000
+);
 
 // Duration.
-	$duration: (
-		transition:					0.2s,
-		bg:							2.5s,
-		intro:						0.75s,
-		article:					0.325s
-	);
+$duration: (
+    transition: 0.2s,
+    bg: 2.5s,
+    intro: 0.75s,
+    article: 0.325s
+);
 
 // Size.
-	$size: (
-		border-radius:				4px,
-		border-width:				1px,
-		element-height:				2.75rem,
-		element-margin:				2rem
-	);
+$size: (
+    border-radius: 4px,
+    border-width: 1px,
+    element-height: 2.75rem,
+    element-margin: 2rem
+);
 
 // Font.
-	$font: (
-		family:						('Source Sans Pro', sans-serif),
-		family-fixed:				('Courier New', monospace),
-		weight:						300,
-		weight-bold:				600,
-		letter-spacing:				0.2rem,
-		letter-spacing-heading:		0.5rem
-	);
+$font: (
+    family: ('Source Sans Pro', sans-serif),
+    family-fixed: ('Courier New', monospace),
+    weight: 300,
+    weight-bold: 600,
+    letter-spacing: 0.2rem,
+    letter-spacing-heading: 0.5rem
+);
 
 // Palette.
-	$palette: (
-		bg:							#1b1f22,
-		bg-alt:						#000000,
-		bg-overlay:					rgba(19,21,25,0.5),
-		fg:							#ffffff,
-		fg-bold:					#ffffff,
-		fg-light:					rgba(255,255,255,0.5),
-		border:						#ffffff,
-		border-bg:					rgba(255,255,255,0.075),
-		border-bg-alt:				rgba(255,255,255,0.175)
-	);
+$palette: (
+    bg: #f0f4f8, // Light background
+    bg-alt: #ffffff, // White background
+    bg-overlay: rgba(0, 0, 0, 0.5), // Semi-transparent overlay
+    fg: #333333, // Dark text
+    fg-bold: #000000, // Bold dark text
+    fg-light: rgba(0, 0, 0, 0.7), // Light dark text
+    border: #cccccc, // Light border
+    border-bg: rgba(0, 0, 0, 0.1), // Light transparent border
+    border-bg-alt: rgba(0, 0, 0, 0.2) // Darker transparent border
+);
