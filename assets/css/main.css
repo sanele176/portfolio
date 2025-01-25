@@ -1,24 +1,35 @@
-/* Error: Undefined mixin.
- *    ,
- * 17 | / @include breakpoints((
- * 18 | |     xlarge:   ( 1281px,  1680px ),
- * 19 | |     large:    ( 981px,   1280px ),
- * 20 | |     medium:   ( 737px,   980px  ),
- * 21 | |     small:    ( 481px,   736px  ),
- * 22 | |     xsmall:   ( 361px,   480px  ),
- * 23 | |     xxsmall:  ( null,    360px  )
- * 24 | | ));
- *    | '--^
- *    '
- *   assets/sass/main.scss 17:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 17 \2502  \250c  @include breakpoints((\a 18 \2502  \2502      xlarge:   ( 1281px,  1680px ),\a 19 \2502  \2502      large:    ( 981px,   1280px ),\a 20 \2502  \2502      medium:   ( 737px,   980px  ),\a 21 \2502  \2502      small:    ( 481px,   736px  ),\a 22 \2502  \2502      xsmall:   ( 361px,   480px  ),\a 23 \2502  \2502      xxsmall:  ( null,    360px  )\a 24 \2502  \2502  ));\a    \2502  \2514 \2500 \2500 ^\a    \2575 \a   assets/sass/main.scss 17:1  root stylesheet";
+/* Compiled CSS from SASS */
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 100%;
+    z-index: 3;
+    height: 100vh; /* Set height for scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
 }
+
+#projects {
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+article {
+    padding: 2.5rem;
+    position: relative;
+    width: 40rem;
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+article.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Additional styles can be added here */
