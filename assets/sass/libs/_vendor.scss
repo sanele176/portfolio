@@ -1,4 +1,4 @@
-// vendor.scss v1.0 | @ajlkn | MIT licensed
+// vendor.scss v1.0 | @ajlkn | MIT licensed */
 
 // Vars.
 
@@ -210,6 +210,10 @@
 			'flex',
 			'inline-flex',
 
+		// Grab cursors.
+			'grab',
+			'grabbing',
+
 		// Gradients.
 			'linear-gradient',
 			'repeating-linear-gradient',
@@ -220,8 +224,16 @@
 			'grid',
 			'inline-grid',
 
-		// Masks.
-			'mask',
+		// Image set.
+			'image-set',
+
+		// Intrinsic width.
+			'max-content',
+			'min-content',
+			'fit-content',
+			'fill',
+			'fill-available',
+			'stretch',
 
 		// Sticky position.
 			'sticky',
@@ -243,6 +255,7 @@
 	/// @param {integer} $index Index.
 	/// @return {list} Updated list.
 	@function remove-nth($list, $index) {
+
 		$result: null;
 
 		@if type-of($index) != number {
@@ -255,17 +268,22 @@
 			@warn "List index is #{$index} but list is only #{length($list)} item long for `remove-nth`.";
 		}
 		@else {
+
 			$result: ();
 			$index: if($index < 0, length($list) + $index + 1, $index);
 
 			@for $i from 1 through length($list) {
+
 				@if $i != $index {
 					$result: append($result, nth($list, $i));
 				}
+
 			}
+
 		}
 
 		@return $result;
+
 	}
 
 	/// Replaces a substring within another string.
@@ -275,6 +293,7 @@
 	/// @param {string} $replace Replacement.
 	/// @return {string} Updated string.
 	@function str-replace($string, $search, $replace: '') {
+
 		$index: str-index($string, $search);
 
 		@if $index {
@@ -282,6 +301,7 @@
 		}
 
 		@return $string;
+
 	}
 
 	/// Replaces a substring within each string in a list.
@@ -290,28 +310,33 @@
 	/// @param {string} $replace Replacement.
 	/// @return {list} Updated list of strings.
 	@function str-replace-all($strings, $search, $replace: '') {
+
 		@each $string in $strings {
 			$strings: set-nth($strings, index($strings, $string), str-replace($string, $search, $replace));
 		}
 
 		@return $strings;
+
 	}
 
-	// Mixins.
+// Mixins.
 
 	/// Wraps @content in vendorized keyframe blocks.
 	/// @param {string} $name Name.
 	@mixin keyframes($name) {
+
 		@-moz-keyframes #{$name} { @content; }
 		@-webkit-keyframes #{$name} { @content; }
 		@-ms-keyframes #{$name} { @content; }
 		@keyframes #{$name} { @content; }
+
 	}
 
 	/// Vendorizes a declaration's property and/or value(s).
 	/// @param {string} $property Property.
 	/// @param {mixed} $value String/list of value(s).
 	@mixin vendor($property, $value) {
+
 		// Determine if property should expand.
 			$expandProperty: index($vendor-properties, $property);
 
@@ -321,8 +346,10 @@
 			@each $x in $value {
 				@each $y in $vendor-values {
 					@if $y == str-slice($x, 1, str-length($y)) {
+
 						$value: set-nth($value, index($value, $x), '-prefix-' + $x);
 						$expandValue: true;
+
 					}
 				}
 			}
@@ -335,7 +362,7 @@
 			}
 
 		// Expand just the value?
-			@else if $expandValue {
+			@elseif $expandValue {
 			    @each $vendor in $vendor-prefixes {
 			        #{$property}: #{str-replace-all($value, '-prefix-', $vendor)};
 			    }
@@ -345,4 +372,5 @@
 			@else {
 		        #{$property}: #{$value};
 			}
+
 	}
